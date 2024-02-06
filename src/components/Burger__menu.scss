@@ -1,0 +1,166 @@
+@import '../utils/variables.scss';
+@import '../styles/blocks/mixin.scss';
+@import '../utils/reset.scss';
+
+.burger__container {
+  padding-top: 1px;
+
+  @include onTablet {
+    padding: 11px 14px 28px 24px;
+  }
+}
+
+.search__container {
+  padding: 0 16px 55px;
+
+  @include onTablet {
+    padding: 0;
+    margin-bottom: 161px;
+  }
+}
+
+.search__block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 42px;
+  // padding-bottom: 4px;
+  padding-left: 21px;
+  background-color: #eee;
+  border-radius: 40px;
+  margin-bottom: 50px;
+
+  @include onTablet {
+    margin-bottom: 75px;
+  }
+}
+
+.search__input {
+  border: none;
+  background-color: #eee;
+  width: 85%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus::placeholder {
+    color: transparent;
+    font-style: normal;
+  }
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #757575;
+  }
+}
+
+.search__icon {
+  background: url('../icons/search.svg') no-repeat center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 4px;
+}
+
+.item__burgers {
+  padding: 40px 120px 57px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include onTablet {
+    padding: 0;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    &:last-of-type {
+      margin-right: 8px;
+    }
+  }
+}
+
+.items__burger {
+  text-align: center;
+  display: inline;
+}
+
+.item__burger {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25.2px;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include onTablet {
+    margin-bottom: 58px;
+  }
+}
+
+.link__burger {
+  color: #2a86e5;
+  text-decoration: none;
+}
+
+.burger__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger {
+  display: flex;
+  align-items: center;
+  // margin-right: 23px;
+  margin-bottom: 23px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include onTablet {
+    margin-bottom: 0;
+    margin-right: 40px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+.burger__icon {
+  width: 16.5px;
+  height: 14px;
+  margin-right: 4.5px;
+}
+
+.item__menu {
+  font-weight: 500;
+  font-size: 18px;
+  // line-height: 18px;
+  letter-spacing: 0.5px;
+  color: #707070;
+}
+
+.phone__burger {
+  background: url('../icons/burger__phone.svg') no-repeat center;
+}
+
+.filter__burger {
+  background: url('../icons/burger__filter.svg') no-repeat center;
+}
+
+.android__burger {
+  background: url('../icons/burger__android.svg') no-repeat center;
+}
+
+.apple__burger {
+  background: url('../icons/burger__apple.svg') no-repeat center;
+}

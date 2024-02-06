@@ -1,0 +1,12 @@
+.header__icons {
+  background-color: #2A86E5;
+}
+
+.header__icon__container {
+  display: flex;
+}
+
+.header__text {
+  font-size: 30px;
+  color: aqua;
+}/*# sourceMappingURL=Header.css.map */

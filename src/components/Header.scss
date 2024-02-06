@@ -1,0 +1,581 @@
+@import '../utils/variables.scss';
+@import '../styles/blocks/mixin.scss';
+@import '../utils/reset.scss';
+
+.menu__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  margin-right: 23px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.menu__icon {
+  width: 16.5px;
+  height: 14px;
+  margin-right: 4.5px;
+}
+
+.menu__item {
+  font-weight: 500;
+  font-size: 14px;
+  // line-height: 18px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.phone__icon {
+  background: url('../icons/menu__phone.svg') no-repeat center;
+}
+
+.filter__icon {
+  background: url('../icons/menu__filter.svg') no-repeat center;
+}
+
+.android__icon {
+  background: url('../icons/menu__android.svg') no-repeat center;
+}
+
+.apple__icon {
+  background: url('../icons/menu__apple.svg') no-repeat center;
+}
+
+// .header__icons__wrapper {
+//   display: flex;
+//   justify-content:space-around;
+// }
+
+.header__icons {
+  padding: 10px 14px 11px 17px;
+  background: linear-gradient(to right, #0DD0BA, #2A86E5);
+
+  @include onTablet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 24px;
+  }
+
+  @include onDesctop {
+    padding-inline: 375px;
+  }
+
+  @media (min-width: 1260px) and (max-width: 1900px) {
+    padding-inline: 55px;
+  }
+}
+
+.header__add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__icon__container {
+  display: flex;
+  margin-right: 15px;
+
+  @include onDesctop {
+    margin-right: 20px;
+  }
+}
+
+.header__icon {
+  // display: flex;
+  // margin-block: auto;
+  width: 29px;
+  height: 29px;
+  margin-right: 5px;
+  background-size: contain;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.facebook__icon {
+  background: url('../icons/facebook.svg') no-repeat center;
+}
+
+.twitter__icon {
+  background: url('../icons/twitter.svg') no-repeat center;
+}
+
+.instagram__icon {
+  background: url('../icons/instagram.svg') no-repeat center;
+}
+
+.youtube__icon {
+  background: url('../icons/youtube.svg') no-repeat center;
+}
+
+.gmail__icon {
+  background: url('../icons/gmail.svg') no-repeat center;
+}
+
+.wifi__icon {
+  background: url('../icons/wifi.svg') no-repeat center;
+}
+
+.header__theme {
+  // display: flex;
+  // align-items: center;
+  // padding-left: 3px;
+  width: 54px;
+  height: 29px;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 2px 26px 2px 3px;
+}
+
+.header__switch {
+  background: url('../icons/sun.svg') no-repeat center;
+  background-color: #183a5d;
+  border-radius: 12.5px;
+  width: 25px;
+  height: 25px;
+}
+
+.header__banner__menu {
+  background-color: #fcfcfc;
+}
+
+.header__logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 15px 28px 15px 15px;
+
+  @include onTablet {
+    padding-inline: 27px 24px;
+  }
+
+  @include onDesctop {
+    padding: 31px 375px 37px 375px;
+    margin-bottom: 44px;
+  }
+
+  @media (min-width: 1260px) and (max-width: 1900px) {
+    padding-inline: 55px;
+  }
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 134px;
+  height: 18px;
+
+  @include onDesctop {
+    margin-right: 61px;
+  }
+}
+
+.burger__items {
+  display: flex;
+  align-items: center;
+}
+
+.burger__item {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25.2px;
+  margin-right: 28px;
+  letter-spacing: 0.5px;
+}
+
+.burger__link {
+  color: #2a86e5;
+  text-decoration: none;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 175.5px;
+  height: 42px;
+  // padding-bottom: 4px;
+  padding-left: 21px;
+  background-color: #eee;
+  border-radius: 40px;
+}
+
+.search__input {
+  border: none;
+  background-color: #eee;
+  width: 122px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus::placeholder {
+    color: transparent;
+    font-style: normal;
+  }
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #757575;
+  }
+}
+
+.search__icon {
+  background: url('../icons/search.svg') no-repeat center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 4px;
+}
+
+.burger__menu {
+  background: url('../icons/burger__menu.svg') no-repeat center;
+  width: 27px;
+  height: 30px;
+}
+
+.close {
+  background: url('../icons/close.svg') no-repeat center;
+  width: 27px;
+  height: 30px;
+}
+
+// .header__background {
+// }
+
+.header__banner {
+  // position: relative;
+  background: url('../pictures/banner.png') no-repeat center;
+  background-size: cover;
+  // width: 350px;
+  height: 130px;
+  // padding: 20px;
+  // padding-right: 20px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+
+  @include onTablet {
+    background: url('../pictures/banner__tablet.png') no-repeat center;
+    background-size: cover;
+    // width: 720px;
+    width: 100%;
+    height: 180px;
+  }
+
+  @include onDesctop {
+    background: url('../pictures/banner__desctop.png') no-repeat center;
+    background-size: cover;
+    // width: 1170px;
+    height: 184px;
+  }
+}
+
+.header__block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(22, 28, 58, 0.8);
+  // width: 350px;
+  height: 130px;
+  border-radius: 30px;
+
+  @include onTablet {
+    // width: 720px;
+    width: 100%;
+    height: 180px;
+    padding: 30px;
+  }
+
+  @include onDesctop {
+    // width: 1170px;
+    width: 100%;
+    height: 184px;
+    padding: 35px 59px 35px 56px;
+  }
+}
+
+.header__banner__content {
+  // position: absolute;
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  // top: 20px;
+  // left: 20px;
+}
+
+.header__game__photo {
+  width: 89px;
+  height: 89px;
+  margin-right: 15px;
+  word-spacing: 0.5px;
+
+  @include onTablet {
+    width: 120px;
+    height: 120px;
+    margin-right: 22px;
+  }
+
+  @include onDesctop {
+    width: 120px;
+    height: 120px;
+    margin-right: 24px;
+  }
+}
+
+.header__content__text {
+  font-family: 'Red Hat Display';
+  color: #fff;
+  text-align: start;
+  font-weight: 700px;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  line-height: 28px;
+
+  @include onTablet {
+    font-size: 35px;
+    line-height: 42px;
+  }
+
+  @include onDesctop {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 10px;
+  }
+}
+
+.header__download {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  border: 1px solid #fff;
+  padding: 5px 16.17px 5px 13px;
+  border-radius: 17px;
+  margin-right: 8px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.ps {
+  background: linear-gradient(to right, #0DD0BA, #2A86E5);
+  border: none;
+  padding-right: 14px;
+}
+
+.download__icon {
+  background: url('../icons/download.svg') no-repeat center;
+  width: 16px;
+  height: 14.77px;
+  margin-right: 6px;
+}
+
+.barand__icon {
+  width: 13px;
+  height: 14px;
+  margin-right: 4px;
+  background-size: contain;
+}
+
+.brand__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.android__icon {
+  background: url('../icons/android.svg') no-repeat;
+}
+
+.ios__icon {
+  background: url('../icons/apple.svg') no-repeat;
+}
+
+.rate {
+  display: flex;
+  align-items: center;
+}
+
+.rate__image {
+  width: 86px;
+  height: 85px;
+  margin-right: 12px;
+}
+
+.players {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 31.75px;
+  color: #fff;
+}
+
+.votes {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.17px;
+  color: #fff;
+}
+
+.your__rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21.17px;
+  color: #fff;
+  margin-right: 2px;
+}
+
+.number {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26.46px;
+  color: #f9b936;
+}
+
+.header__info {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-bottom: 10px;
+  padding-inline: 15px;
+  // width: 100%;
+
+  @include onTablet {
+    padding-inline: 24px;
+  }
+
+  @include onDesctop {
+    // border-radius: 40px;
+    padding-inline: 375px;
+    // width: 1170px;
+    // padding-bottom: 13px;
+  }
+
+  @media (min-width: 1260px) and (max-width: 1900px) {
+    padding-inline: 55px;
+  }
+}
+
+.header__info__wrapper {
+  box-shadow: 0px 22px 59px 0px rgba(42, 134, 229, 0.12);
+  width: 100%;
+  margin: auto;
+
+  @include onDesctop {
+    border-radius: 40px;
+    padding-bottom: 13px;
+  }
+}
+
+.header__text {
+  font-size: 30px;
+}
+
+.header__more__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rate__info {
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  padding-inline: 56px 33px;
+  margin-bottom: 10px;
+
+  @include onDesctop {
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
+}
+
+.rate__items {
+  display: flex;
+  align-items: center;
+}
+
+.rate__item {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  margin-right: 19px;
+  border-left: 1px solid #707070;
+  padding-left: 17px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &:first-of-type {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+.rate__link {
+  color: #707070;
+  text-decoration: none;
+}
+
+.number__items {
+  display: flex;
+  align-items: center;
+  width: 269px;
+  height: 35px;
+  border-radius: 17px;
+  background: linear-gradient(to right, #fcc539, #dc4a19);
+  padding-inline: 12px;
+}
+
+.number__item {
+  font-size: 12px;
+  line-height: 14.4px;
+  letter-spacing: 0.5px;
+  color: #fff;
+  padding-inline: 6px;
+  border-inline: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.note {
+  margin-right: 9.61px;
+}
+
+.more__info {
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #707070;
+}
+
+.burger__info {
+  background: url('../icons/burger__menu1.svg') no-repeat center;
+  width: 20px;
+  height: 15px;
+}

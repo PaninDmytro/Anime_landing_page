@@ -1,0 +1,36 @@
+.banner__items {
+  padding-block: 22px 19px;
+}
+
+.banner__item {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+  text-align: center;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.banner__link {
+  background: linear-gradient(to right, #0DD0BA, #2A86E5);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-decoration: none;
+}
+
+.is-active {
+  &::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 5px;
+    background: linear-gradient(to right, #0DD0BA, #2A86E5);
+    margin: 0 auto;
+    margin-top: 4px;
+    border-radius: 40px;
+  }
+}
