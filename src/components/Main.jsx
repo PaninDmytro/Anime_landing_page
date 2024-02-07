@@ -1,16 +1,23 @@
 import React from 'react';
 import { useMediaQuery } from '../utils/useMediaQuery.ts';
 import './Main.scss';
-// import arrow from '../icons/right__arrow.png'
 import card__picture from '../pictures/card__picture.png'
+import cn from 'classnames';
+import ads__banner from '../pictures/ads.png';
 
 
-export const Main = () => {
+export const Main = ({
+  isSwitchedTheme,
+}) => {
   const isTablet = useMediaQuery('(min-width: 744px)');
   const isDesctop = useMediaQuery('(min-width: 1260px)');
 
   return (
-    <main className="main container">
+    <main
+      className={cn('main container', {
+        'main--dark': isSwitchedTheme,
+      })}
+    >
       <div className='main__header__wrapper'>
         <section className="main__header">
           <div className='main__title'>
@@ -26,7 +33,11 @@ export const Main = () => {
           </div>
 
           <article>
-            <p className='main__description'>
+            <p
+              className={cn('main__description', {
+                'main__description--dark': isSwitchedTheme,
+              })}
+            >
               Lorem Ipsum is simply dummy text of the printing
               and typesetting industry. Lorem Ipsum has been the
               industry's standard dummy text ever since the 1500s,
@@ -45,7 +56,13 @@ export const Main = () => {
 
         <section className='main__content'>
           <div className='similar'>
-            <h3 className='similar__articles'>Similar articles</h3>
+            <h3
+              className={cn('similar__articles', {
+                'similar__articles--dark': isSwitchedTheme,
+              })}
+            >
+              Similar articles
+            </h3>
             <div className='similar__block'></div>
           </div>
 
@@ -136,6 +153,7 @@ export const Main = () => {
       {isDesctop && (
         <div className='main__ads'>
           <div className='ads__block'>
+            <img src={ads__banner} alt='ads__banner' className='ads__photo'></img>
             <div className='ads__content'>
               <p className='ads__text'>ads</p>
               <p className='ads__size'>300x600</p>

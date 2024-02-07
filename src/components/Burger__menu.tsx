@@ -1,26 +1,32 @@
 import React from 'react';
-import { useMediaQuery } from '../utils/useMediaQuery.ts';
 import './Burger__menu.scss';
 
-export const Burger__menu = () => {
+export const Burger__menu = ({
+  setIsOpen,
+}) => {
+  const itemArrays = ['Item', 'Item', 'Item', 'Item', 'Item', 'Item', 'Item', 'Item'];
+  const handleSetLink = () => {
+    setIsOpen(false);
+  }
+
   return (
     <>
       <div className='burger__container'>
         <div className='search__container'>
           <div className='search__block'>
-            <input type='text' className='search__input' placeholder='Search for...'></input>
+            <input type='text' className='input__search' placeholder='Search for...'></input>
             <div className='search__icon'></div>
           </div>
 
           <ul className='items__burger'>
-            <li className='item__burger'><a href='#' className='link__burger'>Item</a></li>
-            <li className='item__burger'><a href='#' className='link__burger'>Item</a></li>
-            <li className='item__burger'><a href='#' className='link__burger'>Item</a></li>
-            <li className='item__burger'><a href='#' className='link__burger'>Item</a></li>
-            <li className='item__burger'><a href='#' className='link__burger'>Item</a></li>
-            <li className='item__burger'><a href='#' className='link__burger'>Item</a></li>
-            <li className='item__burger'><a href='#' className='link__burger'>Item</a></li>
-            <li className='item__burger'><a href='#' className='link__burger'>Item</a></li>
+            {itemArrays.map(item => (
+              <li
+                className='item__burger'
+                onClick={handleSetLink}
+              >
+                <a href='#' className='link__burger'>{item}</a>
+              </li>
+            ))}
           </ul>
         </div>
 

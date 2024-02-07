@@ -1,41 +1,43 @@
-.aside__media {
-  position: fixed;
-  left: 0;
-  top: 286px;
-}
+.aside {
+  &__media {
+    position: fixed;
+    left: 0;
+    top: 286px;
+  }
 
-.aside__icon {
-  display: block;
-  width: 40px;
-  height: 40px;
-}
+  &__icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
 
-.aside__facebook {
-  background: url('../icons/facebook__aside.svg') no-repeat center;
-  background-color: #3a579a;
-}
+  &__facebook {
+    background: url('../icons/facebook__aside.svg') no-repeat center;
+    background-color: #3a579a;
+  }
 
-.aside__twitter {
-  background: url('../icons/twitter__aside.svg') no-repeat center;
-  background-color: #00abf0;
-}
+  &__twitter {
+    background: url('../icons/twitter__aside.svg') no-repeat center;
+    background-color: #00abf0;
+  }
 
-.aside__telegram {
-  background: url('../icons/telegram.svg') no-repeat center;
-  background-color: #24a2e0;
-}
+  &__telegram {
+    background: url('../icons/telegram.svg') no-repeat center;
+    background-color: #24a2e0;
+  }
 
-.aside__pinterest {
-  background: url('../icons/pinterest.svg') no-repeat center;
-  background-color: #cd1c1f;
-}
+  &__pinterest {
+    background: url('../icons/pinterest.svg') no-repeat center;
+    background-color: #cd1c1f;
+  }
 
-.aside__robot {
-  background: url('../icons/robot.svg') no-repeat center;
-  background-color: #fc461e;
-}
+  &__robot {
+    background: url('../icons/robot.svg') no-repeat center;
+    background-color: #fc461e;
+  }
 
-.aside__like {
-  background: url('../icons/like.svg') no-repeat center;
-  background-color: #f95149;
+  &__like {
+    background: url('../icons/like.svg') no-repeat center;
+    background-color: #f95149;
+  }
 }

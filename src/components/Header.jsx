@@ -2,88 +2,139 @@ import React, { useState } from 'react';
 import './Header.scss';
 import logo from '../pictures/logo.png';
 import game__foto from '../pictures/game__photo.png';
+import logo__dark from '../pictures/logo__dark.png';
 import rate from '../pictures/rate.png';
 import { useMediaQuery } from '../utils/useMediaQuery.ts';
 import { Burger__menu } from './Burger__menu.tsx';
 import cn from 'classnames';
 import { Banner__menu } from './Banner__menu.jsx';
 
-export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export const Header = ({
+  setIsSwitchedTheme,
+  isSwitchedTheme,
+  setIsOpen,
+  isOpen,
+}) => {
   const [isMoreInfo, setIsMoreInfo] = useState(false);
+  const [selectedRating, setSelectedRating] = useState(7);
   const isTablet = useMediaQuery('(min-width: 744px)');
   const isDesctop = useMediaQuery('(min-width: 1260px)');
+  const ratingArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const itemsArray = ['Item', 'Item', 'Item', 'Item', 'Item', 'Item', 'Item', 'Item'];
 
   return (
     <header className="header">
       <div className="header__icons">
-        <div className='menu__items'>
-          {(isTablet || isDesctop) && (
-            <>
-              <div className='menu'>
-                <div className='menu__icon phone__icon'></div>
-                <p className='menu__item'>Menu item 1</p>
-              </div >
+        <div className='header__icons__wrapper'>
+          <div className='menu__items'>
+            {(isTablet || isDesctop) && (
+              <>
+                <div className='menu'>
+                  <a href='#' className='menu__link'>
+                    <div className='menu__icon phone__icon'></div>
+                    <p className='menu__item'>Menu item 1</p>
+                  </a>
+                </div >
 
+                <div className='menu'>
+                  <a href='#' className='menu__link'>
+                    <div className='menu__icon filter__icon'></div>
+                    <p className='menu__item'>Menu item 2</p>
+                  </a>
+                </div>
+
+                <div className='menu'>
+                  <a href='#' className='menu__link'>
+                    <div className='menu__icon android__icon'></div>
+                    <p className='menu__item'>Menu item 3</p>
+                  </a>
+                </div>
+              </>
+            )}
+
+            {isDesctop && (
               <div className='menu'>
-                <div className='menu__icon filter__icon'></div>
-                <p className='menu__item'>Menu item 2</p>
+                <a href='#' className='menu__link'>
+                  <div className='menu__icon apple__icon'></div>
+                  <p className='menu__item'>Menu item 4</p>
+                </a>
               </div>
+            )}
+          </div >
 
-              <div className='menu'>
-                <div className='menu__icon android__icon'></div>
-                <p className='menu__item'>Menu item 3</p>
-              </div>
-            </>
-          )}
-
-          {isDesctop && (
-            <div className='menu'>
-              <div className='menu__icon apple__icon'></div>
-              <p className='menu__item'>Menu item 4</p>
+          <div className="header__add">
+            <div className="header__icon__container">
+              <a href='#' className="facebook__icon header__icon"></a>
+              <a href='#' className="twitter__icon header__icon"></a>
+              <a href='#' className="instagram__icon header__icon"></a>
+              <a href='#' className="youtube__icon header__icon"></a>
+              <a href='#' className="gmail__icon header__icon"></a>
+              <a href='#' className="wifi__icon header__icon"></a>
             </div>
-          )}
-        </div >
 
-        <div className="header__add">
-          <div className="header__icon__container">
-            <a href='#' className="facebook__icon header__icon"></a>
-            <a href='#' className="twitter__icon header__icon"></a>
-            <a href='#' className="instagram__icon header__icon"></a>
-            <a href='#' className="youtube__icon header__icon"></a>
-            <a href='#' className="gmail__icon header__icon"></a>
-            <a href='#' className="wifi__icon header__icon"></a>
-          </div>
-
-          <div className="header__theme">
-            <div className='header__switch'></div>
+            <div
+              className={cn("header__theme", {
+                'header__theme__dark': isSwitchedTheme,
+              })}
+              onClick={() => setIsSwitchedTheme(!isSwitchedTheme)}
+            >
+              <div
+                className={cn('header__switch', {
+                  'dark__theme': isSwitchedTheme,
+                })}
+              >
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className='header__banner__menu'>
+      <div
+        className={cn('header__banner__menu', {
+          'header__banner__menu--dark': isSwitchedTheme,
+        })}
+      >
         <div className='header__logo'>
           <div className='header__menu'>
-            <img src={logo} alt="logo" className='logo' />
+            {isSwitchedTheme
+              ? (
+                <img src={logo__dark} alt="logo" className='logo' />
+              ) : (
+                <img src={logo} alt="logo" className='logo' />
+              )}
 
             {isDesctop && (
               <ul className='burger__items'>
-                <li className='burger__item'><a href='#' className='burger__link'>Item</a></li>
-                <li className='burger__item'><a href='#' className='burger__link'>Item</a></li>
-                <li className='burger__item'><a href='#' className='burger__link'>Item</a></li>
-                <li className='burger__item'><a href='#' className='burger__link'>Item</a></li>
-                <li className='burger__item'><a href='#' className='burger__link'>Item</a></li>
-                <li className='burger__item'><a href='#' className='burger__link'>Item</a></li>
-                <li className='burger__item'><a href='#' className='burger__link'>Item</a></li>
-                <li className='burger__item'><a href='#' className='burger__link'>Item</a></li>
+                {itemsArray.map(item => (
+                  <li className='burger__item' key={item}>
+                    <a
+                      href='#'
+                      className={cn('burger__link', {
+                        'burger__link--dark': isSwitchedTheme,
+                      })}
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
               </ul>
             )}
           </div>
 
           {isDesctop
             ? (
-              <div className='search'>
-                <input type='text' className='search__input' placeholder='Search for...'></input>
+              <div
+                className={cn('search', {
+                  'search--dark': isSwitchedTheme,
+                })}
+              >
+                <input
+                  type='text'
+                  className={cn('search__input', {
+                    'search__input--dark': isSwitchedTheme,
+                  })}
+                  placeholder='Search for...'
+                ></input>
                 <div className='search__icon'></div>
               </div>
             ) : (
@@ -98,7 +149,9 @@ export const Header = () => {
         </div>
 
         {(isOpen && !isDesctop) ? (
-          <Burger__menu />
+          <Burger__menu
+            setIsOpen={setIsOpen}
+          />
         ) : (
           <div className='header__info'>
             <div className='header__info__wrapper'>
@@ -161,32 +214,32 @@ export const Header = () => {
 
                     <ul className='number__items'>
                       <li className='number__item note'>Note</li>
-                      <li className='number__item'>1</li>
-                      <li className='number__item'>2</li>
-                      <li className='number__item'>3</li>
-                      <li className='number__item'>4</li>
-                      <li className='number__item'>5</li>
-                      <li className='number__item'>6</li>
-                      <li className='number__item'>8</li>
-                      <li className='number__item'>9</li>
-                      <li className='number__item'>10</li>
+                      {ratingArray.map(rate => (
+                        <li
+                          className={cn('number__item', {
+                            'selected__rate': rate <= selectedRating,
+                            'number__item--dark': isSwitchedTheme,
+                          })}
+                          onClick={() => setSelectedRating(rate)}
+                        >
+                          {rate}
+                        </li>
+                      ))}
                     </ul>
                   </>
                 )}
 
                 {!isDesctop && (
-                  <>
-                    <div className='header__more__info'>
-                      <p className='more__info'>More info</p>
-                      <div className='burger__info' onClick={() => setIsMoreInfo(!isMoreInfo)}></div>
-                    </div>
-
-                    {isMoreInfo && (
-                      <Banner__menu />
-                    )}
-                  </>
+                  <div className='header__more__info'>
+                    <p className='more__info'>More info</p>
+                    <div className='burger__info' onClick={() => setIsMoreInfo(!isMoreInfo)}></div>
+                  </div>
                 )}
               </div>
+
+              {(isMoreInfo && !isDesctop) && (
+                <Banner__menu />
+              )}
             </div>
           </div>
         )}

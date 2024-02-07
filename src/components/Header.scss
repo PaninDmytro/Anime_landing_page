@@ -2,35 +2,44 @@
 @import '../styles/blocks/mixin.scss';
 @import '../utils/reset.scss';
 
-.menu__items {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .menu {
-  display: flex;
-  align-items: center;
   margin-right: 23px;
 
   &:last-child {
     margin-right: 0;
   }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__icon {
+    width: 16.5px;
+    height: 14px;
+    margin-right: 4.5px;
+  }
+
+  &__item {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: $white-color;
+
+    &:hover {
+      color: #2A86E5;
+    }
+  }
 }
 
-.menu__icon {
-  width: 16.5px;
-  height: 14px;
-  margin-right: 4.5px;
-}
-
-.menu__item {
-  font-weight: 500;
-  font-size: 14px;
-  // line-height: 18px;
-  letter-spacing: 0.5px;
-  color: #fff;
-}
 
 .phone__icon {
   background: url('../icons/menu__phone.svg') no-repeat center;
@@ -48,28 +57,34 @@
   background: url('../icons/menu__apple.svg') no-repeat center;
 }
 
-// .header__icons__wrapper {
-//   display: flex;
-//   justify-content:space-around;
-// }
-
 .header__icons {
   padding: 10px 14px 11px 17px;
   background: linear-gradient(to right, #0DD0BA, #2A86E5);
+  margin: auto;
+  position: sticky;
+  top: 0;
+
+  @include onTablet {
+    padding-left: 24px;
+  }
+
+  @include onDesctop {
+    padding-inline: 0;
+  }
+}
+
+.header__icons__wrapper {
+  margin: auto;
+  max-width: 1170px;
 
   @include onTablet {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 24px;
   }
 
   @include onDesctop {
-    padding-inline: 375px;
-  }
-
-  @media (min-width: 1260px) and (max-width: 1900px) {
-    padding-inline: 55px;
+    padding-left: 0;
   }
 }
 
@@ -89,8 +104,6 @@
 }
 
 .header__icon {
-  // display: flex;
-  // margin-block: auto;
   width: 29px;
   height: 29px;
   margin-right: 5px;
@@ -126,14 +139,15 @@
 }
 
 .header__theme {
-  // display: flex;
-  // align-items: center;
-  // padding-left: 3px;
   width: 54px;
   height: 29px;
-  background-color: #fff;
+  background-color: $white-color;
   border-radius: 50px;
-  padding: 2px 26px 2px 3px;
+  padding: 2px 0 2px 3px;
+}
+
+.header__theme__dark {
+  background-color: #183A5D;
 }
 
 .header__switch {
@@ -142,10 +156,21 @@
   border-radius: 12.5px;
   width: 25px;
   height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.dark__theme {
+  transform: translateX(90%);
+  background: url('../icons/moon.svg') no-repeat center;
+  background-color: $white-color;
 }
 
 .header__banner__menu {
   background-color: #fcfcfc;
+}
+
+.header__banner__menu--dark {
+  background-color: #0E1219;
 }
 
 .header__logo {
@@ -154,18 +179,15 @@
   align-items: center;
   margin: auto;
   padding: 15px 28px 15px 15px;
+  max-width: 1170px;
 
   @include onTablet {
     padding-inline: 27px 24px;
   }
 
   @include onDesctop {
-    padding: 31px 375px 37px 375px;
+    padding: 31px 0 37px 0;
     margin-bottom: 44px;
-  }
-
-  @media (min-width: 1260px) and (max-width: 1900px) {
-    padding-inline: 55px;
   }
 }
 
@@ -199,6 +221,18 @@
 .burger__link {
   color: #2a86e5;
   text-decoration: none;
+
+  &:hover {
+    color: #0DD0BA;
+  }
+
+  &:active {
+    color: #183A5D;
+  }
+}
+
+.burger__link--dark {
+  color: #0DD0BA;
 }
 
 .search {
@@ -207,10 +241,13 @@
   justify-content: space-between;
   width: 175.5px;
   height: 42px;
-  // padding-bottom: 4px;
   padding-left: 21px;
   background-color: #eee;
   border-radius: 40px;
+}
+
+.search--dark {
+  background-color: #183A5D;
 }
 
 .search__input {
@@ -235,6 +272,15 @@
   }
 }
 
+.search__input--dark {
+  background-color: #183A5D;
+  color: $white-color;
+
+  &::placeholder {
+    color: $white-color;
+  }
+}
+
 .search__icon {
   background: url('../icons/search.svg') no-repeat center;
   width: 38px;
@@ -254,24 +300,16 @@
   height: 30px;
 }
 
-// .header__background {
-// }
-
 .header__banner {
-  // position: relative;
   background: url('../pictures/banner.png') no-repeat center;
   background-size: cover;
-  // width: 350px;
   height: 130px;
-  // padding: 20px;
-  // padding-right: 20px;
   border-radius: 30px;
   margin-bottom: 10px;
 
   @include onTablet {
     background: url('../pictures/banner__tablet.png') no-repeat center;
     background-size: cover;
-    // width: 720px;
     width: 100%;
     height: 180px;
   }
@@ -279,7 +317,6 @@
   @include onDesctop {
     background: url('../pictures/banner__desctop.png') no-repeat center;
     background-size: cover;
-    // width: 1170px;
     height: 184px;
   }
 }
@@ -290,19 +327,16 @@
   align-items: center;
   padding: 20px;
   background-color: rgba(22, 28, 58, 0.8);
-  // width: 350px;
   height: 130px;
   border-radius: 30px;
 
   @include onTablet {
-    // width: 720px;
     width: 100%;
     height: 180px;
     padding: 30px;
   }
 
   @include onDesctop {
-    // width: 1170px;
     width: 100%;
     height: 184px;
     padding: 35px 59px 35px 56px;
@@ -310,12 +344,8 @@
 }
 
 .header__banner__content {
-  // position: absolute;
   display: flex;
   align-items: center;
-  // justify-content: space-between;
-  // top: 20px;
-  // left: 20px;
 }
 
 .header__game__photo {
@@ -339,7 +369,7 @@
 
 .header__content__text {
   font-family: 'Red Hat Display';
-  color: #fff;
+  color: $white-color;
   text-align: start;
   font-weight: 700px;
   font-size: 24px;
@@ -366,7 +396,7 @@
 .brand {
   display: flex;
   align-items: center;
-  border: 1px solid #fff;
+  border: 1px solid $white-color;
   padding: 5px 16.17px 5px 13px;
   border-radius: 17px;
   margin-right: 8px;
@@ -401,7 +431,7 @@
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.5px;
-  color: #fff;
+  color: $white-color;
 }
 
 .android__icon {
@@ -427,14 +457,14 @@
   font-weight: 800;
   font-size: 24px;
   line-height: 31.75px;
-  color: #fff;
+  color: $white-color;
 }
 
 .votes {
   font-weight: 500;
   font-size: 16px;
   line-height: 21.17px;
-  color: #fff;
+  color: $white-color;
 }
 
 .your__rating {
@@ -446,7 +476,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 21.17px;
-  color: #fff;
+  color: $white-color;
   margin-right: 2px;
 }
 
@@ -463,21 +493,14 @@
   margin: auto;
   padding-bottom: 10px;
   padding-inline: 15px;
-  // width: 100%;
+  max-width: 1170px;
 
   @include onTablet {
     padding-inline: 24px;
   }
 
   @include onDesctop {
-    // border-radius: 40px;
-    padding-inline: 375px;
-    // width: 1170px;
-    // padding-bottom: 13px;
-  }
-
-  @media (min-width: 1260px) and (max-width: 1900px) {
-    padding-inline: 55px;
+    padding-inline: 0;
   }
 }
 
@@ -503,9 +526,9 @@
 }
 
 .rate__info {
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-inline: 56px 33px;
   margin-bottom: 10px;
 
@@ -525,7 +548,7 @@
   font-size: 16px;
   line-height: 26px;
   margin-right: 19px;
-  border-left: 1px solid #707070;
+  border-left: 1px solid $grey-color;
   padding-left: 17px;
 
   &:last-of-type {
@@ -539,31 +562,59 @@
 }
 
 .rate__link {
-  color: #707070;
+  color: $grey-color;
   text-decoration: none;
+
+  &:hover {
+    color: #EEEEEE;
+
+  }
 }
 
 .number__items {
   display: flex;
   align-items: center;
-  width: 269px;
   height: 35px;
   border-radius: 17px;
   background: linear-gradient(to right, #fcc539, #dc4a19);
-  padding-inline: 12px;
+  overflow: visible;
 }
 
 .number__item {
+  padding-block: 10px;
+  font-weight: 700;
   font-size: 12px;
   line-height: 14.4px;
   letter-spacing: 0.5px;
-  color: #fff;
+  color: $grey-color;
+  background-color: #EBF6F5;
   padding-inline: 6px;
-  border-inline: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(112, 112, 112, 0.26);
+  cursor: pointer;
+
+  &:last-of-type {
+    border-right: none;
+    padding-right: 12px;
+    border-radius: 0 17px 17px 0;
+  }
+}
+
+.number__item--dark {
+  background-color: #183A5D;
+  color: $white-color;
+}
+
+.selected__rate {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0);
+  color: $white-color;
 }
 
 .note {
-  margin-right: 9.61px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding-inline: 12px 9.61px;
+  background-color: rgba(255, 255, 255, 0);
+  color: $white-color;
 }
 
 .more__info {
@@ -571,7 +622,7 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 26px;
-  color: #707070;
+  color: $grey-color;
 }
 
 .burger__info {

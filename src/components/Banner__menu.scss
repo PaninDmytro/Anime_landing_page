@@ -1,26 +1,34 @@
-.banner__items {
-  padding-block: 22px 19px;
-}
+.banner {
+  &__items {
+    padding-block: 22px 19px;
+  }
 
-.banner__item {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 26px;
-  letter-spacing: 0.5px;
-  margin-bottom: 28px;
-  text-align: center;
+  &__item {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0.5px;
+    margin-bottom: 28px;
+    text-align: center;
 
-  &:last-of-type {
-    margin-bottom: 0;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item,
+  .is-active {
+    margin-bottom: 12px;
+  }
+
+  &__link {
+    background: linear-gradient(to right, #0DD0BA, #2A86E5);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: none;
   }
 }
 
-.banner__link {
-  background: linear-gradient(to right, #0DD0BA, #2A86E5);
-  -webkit-background-clip: text;
-  color: transparent;
-  text-decoration: none;
-}
 
 .is-active {
   &::after {

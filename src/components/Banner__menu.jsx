@@ -7,10 +7,10 @@ export const Banner__menu = () => {
   const [activeLink, setActiveLink] = useState(0);
   const isTablet = useMediaQuery('(min-width: 744px)');
   const itemsArray = [
-    { id: 1, text: 'Item 1' },
-    { id: 2, text: 'Item 2' },
-    { id: 3, text: 'Item 3' },
-    { id: 4, text: 'Item 4' }
+    { id: 1, text: 'Item' },
+    { id: 2, text: 'Item' },
+    { id: 3, text: 'Item' },
+    { id: 4, text: 'Item' }
   ];
 
   return (

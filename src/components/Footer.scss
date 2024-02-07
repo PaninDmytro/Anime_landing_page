@@ -12,107 +12,147 @@
   @include onDesctop {
     padding-inline: 28px;
   }
-}
 
-.footer__container {
-  padding: 20px;
-  background: linear-gradient(to right, #0dd0ba, #2a86e5);
-  border-radius: 40px;
-
-  @include onTablet {
-    padding: 30px 30px 40px;
+  &__container {
+    padding: 20px;
+    background: linear-gradient(to right, #0dd0ba, #2a86e5);
+    border-radius: 40px;
+  
+    @include onTablet {
+      padding: 30px 30px 40px;
+    }
+  
+    @include onDesctop {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0 20px;
+    }
   }
 
-  @include onDesctop {
+  &--dark {
+    background-color: #0E1219;
+  }
+
+  &__logo {
+    width: 167px;
+    height: 23px;
+  }
+  
+  &__info {
+    padding: 0 30px 24px 30px;
+  
+    @include onTablet {
+      padding: 0 72px 30px;
+    }
+  
+    @include onDesctop {
+      padding: 0 38px 35px 30px;
+    }
+  }
+  
+  &__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0.5px;
+    color: #0dd0ba;
+  
+    @include onTablet {
+      text-align: center;
+    }
+  
+    @include onDesctop {
+      text-align: unset;
+    }
+  }
+  
+  &__description--dark {
+    color: $white-color;
+  }
+  
+  &__description--margin {
+    margin-bottom: 12px;
+  
+    @include onTablet {
+      margin-bottom: 14px;
+    }
+  
+    @include onDesctop {
+      margin-bottom: 12px;
+    }
+  }
+  
+  &__icons {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 20px 0 20px;
+    align-items: center;
+  }
+  
+  &__icon {
+    display: flex;
+    margin-block: auto;
+    width: 37px;
+    height: 37px;
+    margin-right: 6.38px;
+    background-size: contain;
+  
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__links {
+    @include footerGrid;
+    margin-bottom: 35px;
+  
+    @include onTablet {
+      margin-bottom: 32px;
+    }
+  
+    @include onDesctop {
+      margin-bottom: 64px;
+    }
   }
 }
 
 .about__us {
-  padding-block: 17px 27px;
-  background-color: #fff;
+  background-color: $white-color;
   border-radius: 20px;
   margin-bottom: 23px;
+  padding-bottom: 27px;
+  box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.29);
 
   @include onTablet {
-    padding: 34px 72px 27px;
     margin-bottom: 30px;
   }
 
   @include onDesctop {
     width: 351px;
     height: 394px;
-    padding: 61px 30px 21px;
+    padding-bottom: 21px;
     margin-bottom: 0;
     margin-right: 70px;
   }
+
+  &--dark {
+    background-color: #202434;
+  }
 }
 
+
 .logo__container {
-  padding: 55.5px 77px;
+  display: flex;
+  justify-content: center;
+  padding-block: 72.5px 65.5px;
   text-align: center;
-  margin-bottom: 10px;
 
   @include onTablet {
-    padding: 24.5px 179.3px 24.5px 178.5px;
+    padding-block: 58.5px 54.5px;
   }
 
   @include onDesctop {
-    padding: 24.5px 77.5px 24.5px 76.5px;
-  }
-}
-
-.footer__info {
-  padding: 0 30px 24px 30px;
-
-  @include onTablet {
-    padding-bottom: 30px;
-  }
-
-  @include onTablet {
-    padding-bottom: 35px;
-  }
-}
-
-.footer__description {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 23px;
-  letter-spacing: 0.5px;
-  color: #0dd0ba;
-
-  @include onTablet {
-    text-align: center;
-  }
-}
-
-.footer__description--margin {
-  margin-bottom: 12px;
-}
-
-// .footer__instruction {
-//   margin-bottom: 24px;
-// }
-
-.footer__icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer__icon {
-  display: flex;
-  margin-block: auto;
-  width: 37px;
-  height: 37px;
-  margin-right: 6.38px;
-  background-size: contain;
-
-  &:last-child {
-    margin-right: 0;
+    padding-block: 85.5px 65.5px;
   }
 }
 
@@ -140,13 +180,37 @@
   background: url('../icons/wifi__green.svg') no-repeat center;
 }
 
+.facebook__footer--dark {
+  background: url('../icons/dark__facebook.svg') no-repeat center;
+}
+
+.twitter__footer--dark {
+  background: url('../icons/dark__twitter.svg') no-repeat center;
+}
+
+.instagram__footer--dark {
+  background: url('../icons/dark__instagram.svg') no-repeat center;
+}
+
+.youtube__footer--dark {
+  background: url('../icons/dark__youtube.svg') no-repeat center;
+}
+
+.gmail__footer--dark {
+  background: url('../icons/dark__gmail.svg') no-repeat center;
+}
+
+.wifi__footer--dark {
+  background: url('../icons/dark__wifi.svg') no-repeat center;
+}
+
 .categhory {
   font-weight: 700;
   font-size: 24px;
   line-height: 31px;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
-  color: #fff;
+  color: $white-color;
   text-align: center;
 
   @include onTablet {
@@ -154,8 +218,25 @@
   }
 }
 
+.items {
+  @include onDesctop {
+    list-style: disc;
+    color: $white-color;
+    padding-left: 20px;
+  }
+}
+
 .item {
   text-align: center;
+  margin-bottom: 3px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include onDesctop {
+    text-align: unset;
+  }
 }
 
 .item__link {
@@ -163,24 +244,11 @@
   font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.5px;
-  color: #fff;
+  color: $white-color;
   text-decoration: none;
 
   @include onTablet {
     line-height: 23px;
-  }
-}
-
-.footer__links {
-  @include footerGrid;
-  margin-bottom: 35px;
-
-  @include onTablet {
-    margin-bottom: 32px;
-  }
-
-  @include onDesctop {
-    margin-bottom: 64px;
   }
 }
 
@@ -200,9 +268,6 @@
   }
 }
 
-// .useful__container {
-// }
-
 .copyright {
   font-weight: 400;
   font-style: italic;
@@ -210,7 +275,7 @@
   line-height: 17px;
   letter-spacing: 0.5px;
   text-align: center;
-  color: #fff;
+  color: $white-color;
 
   @include onDesctop {
     text-align: start;

@@ -4,6 +4,7 @@
 
 .main {
   padding-block: 20px 130px;
+  max-width: 1170px;
 
   @include onDesctop {
     padding-block: 46px 130px;
@@ -12,10 +13,8 @@
   }
 }
 
-.container {
-  @media (min-width: 1260px) and (max-width: 1900px) {
-    padding-inline: 55px;
-  }
+.main--dark {
+  background-color: #0E1219;
 }
 
 .main__header__wrapper {
@@ -34,10 +33,8 @@
 
 .main__navigation {
   display: flex;
-  // justify-content: center;
   align-items: center;
   margin-bottom: 2px;
-  // text-align: center;
 }
 
 .nav__item {
@@ -50,10 +47,8 @@
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0.5px;
-  color: #707070;
+  color: $grey-color;
   text-align: center;
-  // white-space: normal;
-  // white-space: nowrap;
 }
 
 .nav__active {
@@ -85,7 +80,11 @@
   font-size: 20px;
   line-height: 32px;
   letter-spacing: 0.5px;
-  color: #707070;
+  color: $grey-color;
+}
+
+.main__description--dark {
+  color: $white-color;
 }
 
 .main__content {
@@ -97,16 +96,17 @@
   font-size: 20px;
   line-height: 26px;
   letter-spacing: 0.5px;
-  color: #707070;
+  color: $grey-color;
   margin-bottom: 9px;
+}
+
+.similar__articles--dark {
+  color: $white-color;
 }
 
 .similar {
   padding-left: 10px;
   margin-bottom: 20px;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
 }
 
 .similar__block {
@@ -124,7 +124,6 @@
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0px 3px 16px 0px rgba(42, 134, 229, 0.14);
-  // margin-bottom: 20px;
 
   &:last-child {
     margin-bottom: 0;
@@ -146,13 +145,11 @@
   @include onDesctop {
     width: 347px;
   }
-}
 
-// .sdsdf {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
+  &:hover {
+    transform: scale(1.1);
+  }
+}
 
 .card__description {
   font-weight: 700;
@@ -214,16 +211,23 @@
 }
 
 .ads__block {
-  background: rgba(0, 0, 0, 0.09) url('../pictures/ads.png') no-repeat center;
-  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 300px;
   height: 600px;
-  padding: 244px 58px;
   border-radius: 20px;
 }
 
+.ads__photo {
+  position: absolute;
+  width: 300px;
+  height: 600px;
+}
+
 .ads__text {
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 60px;
   line-height: 72px;
   letter-spacing: 0.5px;
