@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Anime_landing_page/static/css/main.1c505046.css",
-    "main.js": "/Anime_landing_page/static/js/main.e3552ff1.js",
+    "main.css": "/Anime_landing_page/static/css/main.a60ba488.css",
+    "main.js": "/Anime_landing_page/static/js/main.906a35c6.js",
     "static/media/banner__desctop.png": "/Anime_landing_page/static/media/banner__desctop.62ec19a3c4d19caecb54.png",
     "static/media/banner__tablet.png": "/Anime_landing_page/static/media/banner__tablet.a6d979e3b7bada74d4da.png",
     "static/media/banner.png": "/Anime_landing_page/static/media/banner.86bcc0314b09b3923005.png",
@@ -53,11 +53,11 @@
     "static/media/dark__facebook.svg": "/Anime_landing_page/static/media/dark__facebook.9189441cf13cdb1e103a.svg",
     "static/media/facebook.svg": "/Anime_landing_page/static/media/facebook.789db283123820b7f366.svg",
     "static/media/facebook__aside.svg": "/Anime_landing_page/static/media/facebook__aside.64d9da8e3b27c305abf3.svg",
-    "main.1c505046.css.map": "/Anime_landing_page/static/css/main.1c505046.css.map",
-    "main.e3552ff1.js.map": "/Anime_landing_page/static/js/main.e3552ff1.js.map"
+    "main.a60ba488.css.map": "/Anime_landing_page/static/css/main.a60ba488.css.map",
+    "main.906a35c6.js.map": "/Anime_landing_page/static/js/main.906a35c6.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c505046.css",
-    "static/js/main.e3552ff1.js"
+    "static/css/main.a60ba488.css",
+    "static/js/main.906a35c6.js"
   ]
 }
